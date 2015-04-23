@@ -20,7 +20,7 @@ public class mainTest {
 
     @Test
     public void test1() {
-        main.main(new String[0]);
+        main.hello();
         assertEquals("hello\n", outContent.toString());
     }
 
