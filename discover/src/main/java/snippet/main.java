@@ -3,7 +3,14 @@ package snippet;
 /**
  * Main class.
  */
-public class main {
+final class Snippet {
+
+    /**
+     * Prevent any instance member of this class to be created.
+     */
+    private Snippet() {
+        throw new AssertionError("Instantiating utility class...");
+    }
 
     /**
      * Simple first method.

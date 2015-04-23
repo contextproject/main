@@ -22,7 +22,7 @@ public class mainTest {
 
     @Test
     public void test1() {
-        main.hello();
+        Snippet.hello();
         assertEquals("hello\n", outContent.toString());
     }
 
