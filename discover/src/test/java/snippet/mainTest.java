@@ -23,7 +23,7 @@ public class mainTest {
     @Test
     public void test1() {
         Snippet.hello();
-        assertEquals("hello\n", outContent.toString());
+        assertEquals("Hello World\n", outContent.toString());
     }
 
     @After
