@@ -43,4 +43,17 @@ public class Comment {
   public static int getPeriod() {
     return period;
   }
+  
+  public boolean equals(Object other){
+	  return other.equals((Comment) this);
+	  
+  }
+  
+  public boolean equals(Comment com){
+	  return this.getUser() == com.getUser() && this.getTime() == com.getTime();
+  }
+  
+  public int hashCode(){
+	  return userid + timestamp;
+  }
 }
