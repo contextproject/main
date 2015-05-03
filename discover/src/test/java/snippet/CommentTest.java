@@ -1,6 +1,8 @@
 package snippet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,6 +12,7 @@ public class CommentTest {
 
   private Comment c1;
   private Comment c2;
+  private Comment c3;
 
   /**
    * Setting up 2 comments to test with.
@@ -18,6 +21,7 @@ public class CommentTest {
   public void makeComments() {
     c1 = new Comment(1, 5000);
     c2 = new Comment(2, 12321);
+    c3 = new Comment(1, 12321);
 
   }
 
@@ -74,7 +78,50 @@ public class CommentTest {
   }
 
   /**
-   * Nothing to do after.
+   * Simple equals test completly False case.
+   */
+  @Test
+  public void testEquals1() {
+    assertFalse(c1.equals(c2));
+  }
+
+  /**
+   * Simple equals test True case.
+   */
+  @Test
+  public void testEquals2() {
+
+    assertTrue(c1.equals(c1));
+  }
+
+  /**
+   * Simple equals test False case if 1 of the conditions is true.
+   */
+  @Test
+  public void testEquals3() {
+    assertFalse(c1.equals(c3));
+    assertFalse(c2.equals(c3));
+  }
+
+  /**
+   * Test of the first equals method.
+   */
+  @Test
+  public void testEquals4() {
+    Object x1 = new Object();
+    assertFalse(c1.equals(x1));
+  }
+
+  /**
+   * Simple hashcode test.
+   */
+  @Test
+  public void testHash() {
+    assertEquals(5001, c1.hashCode());
+  }
+
+  /**
+   * Setting period back to default value.
    */
   @After
   public void after() {
